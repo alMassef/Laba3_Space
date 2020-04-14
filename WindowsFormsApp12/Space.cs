@@ -31,11 +31,21 @@ namespace WindowsFormsApp12
         // переопределили метод
         public override String GetInfo()
         {
+            string planAtmosphere = "";
+            switch (this.Atmosphere)
+            {
+                case false:
+                    planAtmosphere = "атмосфера отсутствует";
+                    break;
+                case true:
+                    planAtmosphere = "атмосфера присутствует";
+                    break;
+            }
             var str = "Планета";
             str += base.GetInfo();
             str += String.Format("\nРадиус планеты (км): {0}", this.Radius);
             str += String.Format("\nСила притяжения (g): {0}", this.ForceOfGravity);
-            str += String.Format("\nНаличие атмосферы: {0}", this.Atmosphere);
+            str += String.Format("\nНаличие атмосферы: {0}", planAtmosphere);
             return str;
         }
 
@@ -64,10 +74,23 @@ namespace WindowsFormsApp12
         // переопределили метод
         public override String GetInfo()
         {
+            string colorStars = "";
+            switch (this.type)
+            {
+                case StarsColor.blue:
+                    colorStars = "синий";
+                    break;
+                case StarsColor.yellow:
+                    colorStars = "желтый";
+                    break;
+                case StarsColor.red:
+                    colorStars = "красный";
+                    break;
+            }
             var str = "Звезда";
             str += base.GetInfo();
             str += String.Format("\nПлотность (мг/м^3): {0}", this.Density);
-            str += String.Format("\nЦвет звезды: {0}", this.type);
+            str += String.Format("\nЦвет звезды: {0}", colorStars);
             str += String.Format("\nтемпература (K): {0}", this.Temperature);
             return str;
         }
@@ -97,10 +120,23 @@ namespace WindowsFormsApp12
         // переопределили метод
         public override String GetInfo()
         {
+            string nameComet = "";
+            switch (this.type)
+            {
+                case CometName.Tempely:
+                    nameComet = "Темпели";
+                    break;
+                case CometName.Hallea:
+                    nameComet = "Галлея";
+                    break;
+                case CometName.Donati:
+                    nameComet = "Донати";
+                    break;
+            }
             var str = "Комета";
             str += base.GetInfo();
             str += String.Format("\nПериод прохождения через солнечную систему (лет): {0}", this.PassageThroughTheSolarSystem);
-            str += String.Format("\nНазвание кометы: {0}", this.type);
+            str += String.Format("\nНазвание кометы: {0}", nameComet);
             return str;
         }
 
