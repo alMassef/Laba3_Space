@@ -42,6 +42,8 @@ namespace WindowsFormsApp12
                         break;
                 }
             }
+
+            wtInfo();
             ShowInfo();
         }
 
@@ -76,6 +78,36 @@ namespace WindowsFormsApp12
             txtInfo.Text += String.Format("{0}\t{1}\t{2}", planetCount, starCount, cometCount);
         }
 
+        private void wtInfo()
+        {
+            if (this.spaceList.Count == 0)
+            {
+                labInfo.Text = "ПУСТО!!!!!";
+                return;
+            }
+
+            var space = this.spaceList[0]; // берем объект
+
+            if (space is Planet)
+            {
+                labInfo.Text = "Объект в очереди: Планета";
+            }
+            else if (space is Star)
+            {
+                labInfo.Text = "Объект в очереди: Звезда";
+            }
+            else if (space is Comet)
+            {
+                labInfo.Text = "Объект в очереди: Комета";
+            }
+            else if (this.spaceList.Count == 0)
+            {
+                labInfo.Text = "ПУСТО!!!!!";
+                return;
+            }
+            
+        }
+
         private void btnGet_Click(object sender, EventArgs e)
         {
             // если список пуст, то напишем что пусто и выйдем из функции
@@ -91,6 +123,7 @@ namespace WindowsFormsApp12
             // вывод информации о объекте на поле
             txtOut.Text = space.GetInfo();
 
+            wtInfo();
             ShowInfo();
         }
     }
