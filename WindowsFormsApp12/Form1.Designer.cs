@@ -32,7 +32,7 @@
             this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
             this.txtOut = new System.Windows.Forms.RichTextBox();
-            this.labInfo = new System.Windows.Forms.Label();
+            this.txtTurn = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnRefill
@@ -57,7 +57,7 @@
             // 
             // btnGet
             // 
-            this.btnGet.Location = new System.Drawing.Point(231, 129);
+            this.btnGet.Location = new System.Drawing.Point(231, 97);
             this.btnGet.Name = "btnGet";
             this.btnGet.Size = new System.Drawing.Size(72, 97);
             this.btnGet.TabIndex = 2;
@@ -67,26 +67,28 @@
             // 
             // txtOut
             // 
-            this.txtOut.Location = new System.Drawing.Point(12, 129);
+            this.txtOut.Location = new System.Drawing.Point(12, 97);
             this.txtOut.Name = "txtOut";
             this.txtOut.Size = new System.Drawing.Size(213, 97);
             this.txtOut.TabIndex = 3;
             this.txtOut.Text = "";
             // 
-            // labInfo
+            // txtTurn
             // 
-            this.labInfo.AutoSize = true;
-            this.labInfo.Location = new System.Drawing.Point(12, 104);
-            this.labInfo.Name = "labInfo";
-            this.labInfo.Size = new System.Drawing.Size(0, 13);
-            this.labInfo.TabIndex = 4;
+            this.txtTurn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTurn.Location = new System.Drawing.Point(309, 12);
+            this.txtTurn.Name = "txtTurn";
+            this.txtTurn.ReadOnly = true;
+            this.txtTurn.Size = new System.Drawing.Size(113, 181);
+            this.txtTurn.TabIndex = 4;
+            this.txtTurn.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 238);
-            this.Controls.Add(this.labInfo);
+            this.ClientSize = new System.Drawing.Size(445, 276);
+            this.Controls.Add(this.txtTurn);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtInfo);
@@ -94,7 +96,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -104,7 +105,7 @@
         private System.Windows.Forms.RichTextBox txtInfo;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.RichTextBox txtOut;
-        private System.Windows.Forms.Label labInfo;
+        private System.Windows.Forms.RichTextBox txtTurn;
     }
 }
 

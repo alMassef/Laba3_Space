@@ -42,8 +42,6 @@ namespace WindowsFormsApp12
                         break;
                 }
             }
-
-            wtInfo();
             ShowInfo();
         }
 
@@ -54,21 +52,30 @@ namespace WindowsFormsApp12
             int planetCount = 0;
             int starCount = 0;
             int cometCount = 0;
+            int i = 0;
+
+            txtTurn.Text = "Космические обьекты в очереди:\n";
 
             // пройдемся по всему списку
             foreach (var spase in this.spaceList)
             {
+                i++;
+
                 if (spase is Planet)
                 {
                     planetCount += 1;
+                    txtTurn.Text += i + ". Планета\n";
+
                 }
                 else if (spase is Star)
                 {
                     starCount += 1;
+                    txtTurn.Text += i + ". Звезда\n";
                 }
                 else if (spase is Comet)
                 {
                     cometCount += 1;
+                    txtTurn.Text += i + ". Комета\n";
                 }
             }
 
@@ -76,36 +83,6 @@ namespace WindowsFormsApp12
             txtInfo.Text = "Планет\tЗвезд\tКомет";
             txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t{1}\t{2}", planetCount, starCount, cometCount);
-        }
-
-        private void wtInfo()
-        {
-            if (this.spaceList.Count == 0)
-            {
-                labInfo.Text = "ПУСТО!!!!!";
-                return;
-            }
-
-            var space = this.spaceList[0]; // берем объект
-
-            if (space is Planet)
-            {
-                labInfo.Text = "Объект в очереди: Планета";
-            }
-            else if (space is Star)
-            {
-                labInfo.Text = "Объект в очереди: Звезда";
-            }
-            else if (space is Comet)
-            {
-                labInfo.Text = "Объект в очереди: Комета";
-            }
-            else if (this.spaceList.Count == 0)
-            {
-                labInfo.Text = "ПУСТО!!!!!";
-                return;
-            }
-            
         }
 
         private void btnGet_Click(object sender, EventArgs e)
@@ -123,7 +100,6 @@ namespace WindowsFormsApp12
             // вывод информации о объекте на поле
             txtOut.Text = space.GetInfo();
 
-            wtInfo();
             ShowInfo();
         }
     }

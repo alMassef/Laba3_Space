@@ -91,7 +91,7 @@ namespace WindowsFormsApp12
             str += base.GetInfo();
             str += String.Format("\nПлотность (мг/м^3): {0}", this.Density);
             str += String.Format("\nЦвет звезды: {0}", colorStars);
-            str += String.Format("\nтемпература (K): {0}", this.Temperature);
+            str += String.Format("\nТемпература (K): {0}", this.Temperature);
             return str;
         }
 
